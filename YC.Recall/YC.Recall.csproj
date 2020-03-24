@@ -115,15 +115,20 @@
     <Compile Include="ILayer\Base\IModelDialog.cs" />
     <Compile Include="ILayer\Base\IPermission.cs" />
     <Compile Include="Model\AlbumModel.cs" />
+    <Compile Include="Model\Hit_SingleModel.cs" />
     <Compile Include="Model\Module\ModuleGroup.cs" />
     <Compile Include="Model\Module\ModuleManager.cs" />
     <Compile Include="Model\Module\PageInfo.cs" />
     <Compile Include="ViewDialog\Base\BaseView.cs" />
     <Compile Include="ViewDialog\Base\BaseViewDialog.cs" />
-    <Compile Include="ViewModel\Album\AlbumViewModel.cs" />
+    <Compile Include="ViewModel\Recommend\Album\AlbumViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="Views\Album\AlbumView.xaml.cs">
+    <Compile Include="ViewModel\Recommend\Hit Single\Hit_SingleViewModel.cs" />
+    <Compile Include="Views\Recommend\Album\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recommend\Hit Single\Hit_SingleView.xaml.cs">
+      <DependentUpon>Hit_SingleView.xaml</DependentUpon>
     </Compile>
     <Page Include="Common\UserControls\MainLeftMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -145,7 +150,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\Album\AlbumView.xaml">
+    <Page Include="Views\Recommend\Album\AlbumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Recommend\Hit Single\Hit_SingleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

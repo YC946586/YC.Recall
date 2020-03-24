@@ -16,24 +16,28 @@ using YC.Recall.Common.Module;
 using YC.Recall.ILayer.Base;
 using YC.Recall.Model;
 using YC.Recall.ViewDialog.Base;
-using YC.Recall.ViewModel.Album;
+using YC.Recall.ViewModel.Recommend.Hit_Single;
 
-namespace YC.Recall.Views.Album
+namespace YC.Recall.Views.Recommend.Hit_Single
 {
-   
-    public partial class AlbumView : UserControl
+    /// <summary>
+    /// Hit_SingleView.xaml 的交互逻辑
+    /// </summary>
+    public partial class Hit_SingleView : UserControl
     {
-        public AlbumView()
+        public Hit_SingleView()
         {
             InitializeComponent();
         }
+
+       
     }
     /// <summary>
     /// AlbumView.xaml 的交互逻辑
     /// </summary>
     /// 
-    [Module(ModuleType.Recommend, "Album", "YC.Recall.Views.Album.AlbumViewDog", 0)]
-    public class AlbumViewDog : BaseView<AlbumView, AlbumViewModel, AlbumModel>, IModel
+    [Module(ModuleType.Recommend, "Hit Single", "YC.Recall.Views.Recommend.Hit_Single.Hit_SingleViewDog", 0)]
+    public class Hit_SingleViewDog : BaseView<Hit_SingleView, Hit_SingleViewModel, Hit_SingleModel>, IModel
     {
 
     }
