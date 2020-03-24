@@ -28,6 +28,7 @@ namespace YC.Recall.Views.Recommend.Hit_Single
         public Hit_SingleView()
         {
             InitializeComponent();
+            
         }
 
        

@@ -13,7 +13,8 @@
         <ResourceDictionary Source="pack://application:,,,/Orx.Client.UI;component/themes/Overall.xaml"/>-->
         <ResourceDictionary Source="../Styles/RadioButton.xaml"/>
         <ResourceDictionary Source="../Styles/SearchText.xaml"/>
-     
+        <ResourceDictionary Source="../Styles/ImgMovButton.xaml"/>
+        
     </ResourceDictionary.MergedDictionaries>
          <FontFamily x:Key="IconFont">pack://application:,,,/Resource/#iconfont</FontFamily>
     <!-- 应该在此定义资源字典条目。-->

@@ -32,7 +32,7 @@
         <Style x:Key="Gridstyles" TargetType="Grid">
             <Setter Property="Background">
                 <Setter.Value>
-                    <ImageBrush ImageSource="Images/5a0506d13647a.jpg"></ImageBrush>
+                    <ImageBrush ImageSource="Images/1e.jpg"></ImageBrush>
                 </Setter.Value>
             </Setter>
             <Setter Property="Effect">
