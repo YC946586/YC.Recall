@@ -14,7 +14,7 @@
             <converters:NameToObjectConverter x:Key="ImgConvert"/>
             </ResourceDictionary>
         </UserControl.Resources>
-    <ItemsControl ItemsSource="{Binding Path=ModuleManager.ModuleGroups}"  Background="#D3D3D3" >
+    <ItemsControl ItemsSource="{Binding Path=ModuleManager.ModuleGroups}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                 <StackPanel />
@@ -22,11 +22,11 @@
         </ItemsControl.ItemsPanel>
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-                <StackPanel Background="#D3D3D3"  Margin="0 20 0 0" >
-                    <Border BorderThickness="0 0 0 1" BorderBrush="#085252">
+                <StackPanel   Margin="0 20 0 0" >
+                    <Border BorderThickness="0 0 0 1">
                         <StackPanel Orientation="Horizontal"  Height="40">
                             <Path  Data="{StaticResource AllDot}"  Fill="#365255"  Margin="25 0 10 0"/>
-                            <TextBlock Text="{Binding GroupName}"  Foreground="#365255"  VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding GroupName}"   VerticalAlignment="Center"/>
                         </StackPanel>
                     </Border>
                     <ItemsControl ItemsSource="{Binding Modules}">
@@ -37,7 +37,7 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <skin:RadioButtonIcon SelectIcon="{Binding ICON,Converter={StaticResource ImgConvert}}" Text="{Binding Name}"  Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                <skin:RadioButtonIcon TextIcon="{Binding ICON}" Text="{Binding Name}"  Command="{Binding RelativeSource={RelativeSource FindAncestor, 
                                             AncestorType={x:Type local:MainLeftMenu }},
                                             Path=DataContext.ExcuteCommand,Mode=TwoWay}"   CommandParameter="{Binding}"/>
                             </DataTemplate>

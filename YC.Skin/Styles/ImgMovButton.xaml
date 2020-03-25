@@ -20,7 +20,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
-                        <Border CornerRadius="10" >
+                        <Border CornerRadius="10"  x:Name="bor">
                             <Border.Background>
                                 <ImageBrush ImageSource="{Binding ElementName=mainGrid,Path=Tag}" ></ImageBrush>
                             </Border.Background>
@@ -33,9 +33,10 @@
                                    FontSize="15" Grid.Row="1"/>
                     </Grid>
                     <ControlTemplate.Triggers>
-
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="txtMs"  Property="Foreground" Value="Red"></Setter>
+                            <!--<Setter  Property="Padding" Value="50"></Setter>
+                            <Setter TargetName="bor"  Property="Width" Value="{Binding ElementName=bor,Path=ActualWidth,Converter={StaticResource IWidthFlag}}"></Setter>-->
+                            <!--<Setter TargetName="txtMs"  Property="Foreground" Value="Red"></Setter>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

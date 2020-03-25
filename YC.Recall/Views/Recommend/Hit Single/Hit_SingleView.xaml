@@ -17,6 +17,7 @@
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Recommend" FontSize="20"  />
         </StackPanel>
-        <skin:ImgMovButton Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  ImgPath="{Binding ImageSourcPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="200" Height="250" Grid.Row="1"/>
+        <skin:ImgMovButton Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                           ImgPath="{Binding ImageSourcPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Width="200" Height="250" Grid.Row="1"/>
     </Grid>
 </UserControl>

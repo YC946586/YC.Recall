@@ -87,6 +87,18 @@
     <Resource Include="Images\Album\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="download\font_1670917_yb26m3szyic\demo.css" />
+    <Content Include="download\font_1670917_yb26m3szyic\demo_index.html" />
+    <Content Include="download\font_1670917_yb26m3szyic\iconfont.css" />
+    <Content Include="download\font_1670917_yb26m3szyic\iconfont.js" />
+    <Content Include="download\font_1670917_yb26m3szyic\iconfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="download\font_1670917_yb26m3szyic\iconfont.eot" />
+    <None Include="download\font_1670917_yb26m3szyic\iconfont.json" />
+    <None Include="download\font_1670917_yb26m3szyic\iconfont.ttf" />
+    <None Include="download\font_1670917_yb26m3szyic\iconfont.woff" />
+    <None Include="download\font_1670917_yb26m3szyic\iconfont.woff2" />
     <Resource Include="Resources\iconfont.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

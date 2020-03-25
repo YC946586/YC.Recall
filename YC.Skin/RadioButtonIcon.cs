@@ -65,6 +65,17 @@ namespace YC.Skin
             DependencyProperty.Register("Text", typeof(string), typeof(RadioButtonIcon), new PropertyMetadata(""));
 
 
+        public static readonly DependencyProperty TextIconProperty =
+       DependencyProperty.Register("TextIcon", typeof(string), typeof(RadioButtonIcon), new PropertyMetadata(""));
+        public string TextIcon
+        {
+            get { return (string)GetValue(TextIconProperty); }
+            set { SetValue(TextIconProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
+   
+
 
     }
 

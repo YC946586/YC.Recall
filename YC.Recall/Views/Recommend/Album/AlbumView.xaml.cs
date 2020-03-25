@@ -32,7 +32,7 @@ namespace YC.Recall.Views.Album
     /// AlbumView.xaml 的交互逻辑
     /// </summary>
     /// 
-    [Module(ModuleType.Recommend, "Album", "YC.Recall.Views.Album.AlbumViewDog", 1)]
+    [Module(ModuleType.Recommend, "Album", "YC.Recall.Views.Album.AlbumViewDog", "\uea64", 1)]
     public class AlbumViewDog : BaseView<AlbumView, AlbumViewModel, AlbumModel>, IModel
     {
 

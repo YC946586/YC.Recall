@@ -36,7 +36,7 @@ namespace YC.Recall.Common
         /// <returns></returns>
         public static ModuleAttribute GetModuleAttribute(Assembly asm)
         {
-            ModuleAttribute temp = new ModuleAttribute(ModuleType.None, "", "", 0);
+            ModuleAttribute temp = new ModuleAttribute(ModuleType.None, "", "","", 0);
             if (asm == null) return temp;
 
             object[] list = asm.GetCustomAttributes(typeof(ModuleAttribute), false);
@@ -53,7 +53,7 @@ namespace YC.Recall.Common
         /// <returns></returns>
         public static ModuleAttribute GetModuleAttribute(TypeInfo asm)
         {
-            ModuleAttribute temp = new ModuleAttribute(ModuleType.None, "","", 0);
+            ModuleAttribute temp = new ModuleAttribute(ModuleType.None, "", "", "", 0);
             if (asm == null) return temp;
 
             object[] list = asm.GetCustomAttributes(typeof(ModuleAttribute), false);

@@ -16,7 +16,7 @@
         <hc:SimplePanel  >
             <hc:ScrollViewer Name="ScrollViewerDemo" IsInertiaEnabled="True" Margin="0"  Padding="0" >
                
-                <hc:CoverView    ItemWidth="270" ItemHeight="300" ItemsSource="{Binding DataList}"  Padding="0" Margin="0">
+                <hc:CoverView    ItemWidth="260" ItemHeight="300" ItemsSource="{Binding DataList}"  Padding="0" Margin="0">
                     <hc:CoverView.ItemHeaderTemplate>
                         <DataTemplate>
                             <Image Source="{Binding ImgPath}" Margin="0" />

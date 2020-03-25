@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace YC.Skin
 {
@@ -13,8 +14,27 @@ namespace YC.Skin
     {
         public ImgMovButton()
         {
-
+            MouseEnter += ImgMovButton_MouseEnter;
+            MouseLeave += ImgMovButton_MouseLeave;
         }
+        /// <summary>
+        /// 移除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ImgMovButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            var cur = sender as ImgMovButton;
+            ScaleEasingOutAnimation(cur);
+        }
+
+        private void ImgMovButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+          
+            var cur = sender as ImgMovButton;
+            ScaleEasingInAnimation(cur);
+        }
+
         // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(ImgMovButton), new PropertyMetadata(""));
@@ -35,6 +55,84 @@ namespace YC.Skin
             set { SetValue(ImgPathProperty, value); }
         }
 
-      
+
+        /// <summary>
+        /// 弹簧式放大
+        /// </summary>
+        /// <param name="element"></param>
+        public static void ScaleEasingInAnimation(FrameworkElement element)
+        {
+            ScaleTransform scale = new ScaleTransform();
+            element.RenderTransform = scale;
+            element.RenderTransformOrigin = new Point(0.5, 0.5);//定义圆心位置
+            EasingFunctionBase easing = new ElasticEase()
+            {
+                EasingMode = EasingMode.EaseOut,            //公式
+                Oscillations = 3,                           //抖动次数
+                Springiness = 20                            //弹簧刚度
+            };
+            DoubleAnimation scaleAnimation = new DoubleAnimation()
+            {
+                From = 1,                                 //起始值
+                To =1.2,                                     //结束值
+                EasingFunction = easing,                    //缓动函数
+                Duration = new TimeSpan(0, 0, 0, 1, 100),    //动画播放时间
+                FillBehavior = FillBehavior.HoldEnd          //动画完成时保持为终值
+            };
+            AnimationClock clock = scaleAnimation.CreateClock();
+            scale.ApplyAnimationClock(ScaleTransform.ScaleXProperty, clock, HandoffBehavior.Compose);
+            scale.ApplyAnimationClock(ScaleTransform.ScaleYProperty, clock, HandoffBehavior.Compose);
+        }
+        /// <summary>
+        /// 弹簧式缩小
+        /// </summary>
+        /// <param name="element"></param>
+        public static void ScaleEasingOutAnimation(FrameworkElement element)
+        {
+
+            //ScaleTransform scale = new ScaleTransform();  //旋转
+            //element.RenderTransform = scale;
+            ////定义圆心位置
+            //element.RenderTransformOrigin = new System.Windows.Point(0.5, 0.5);
+            ////定义过渡动画,power为过度的强度
+            //EasingFunctionBase easeFunction = new PowerEase()
+            //{
+            //    EasingMode = EasingMode.EaseInOut,
+            //    Power=2,
+            //};
+
+            //DoubleAnimation scaleAnimation = new DoubleAnimation()
+            //{
+            //    From = 1.2,                                   //起始值
+            //    To = 1,                                     //结束值
+            //    FillBehavior = FillBehavior.HoldEnd,
+            //    Duration = new TimeSpan(0, 0, 0, 1, 0),    //动画播放时间
+            //};
+            //scale.BeginAnimation(ScaleTransform.ScaleXProperty, scaleAnimation);
+            //scale.BeginAnimation(ScaleTransform.ScaleYProperty, scaleAnimation);
+
+
+            ScaleTransform scale = new ScaleTransform();
+            element.RenderTransform = scale;
+            element.RenderTransformOrigin = new Point(0.5, 0.5);//定义圆心位置
+            EasingFunctionBase easing = new ElasticEase()
+            {
+                EasingMode = EasingMode.EaseOut,            //公式
+                Oscillations = 3,                           //抖动次数
+                Springiness = 20                            //弹簧刚度
+            };
+            DoubleAnimation scaleAnimation = new DoubleAnimation()
+            {
+                From = 1.2,                                 //起始值
+                To = 1,                                     //结束值
+                EasingFunction = easing,                    //缓动函数
+                Duration = new TimeSpan(0, 0, 0, 1, 100),    //动画播放时间
+                FillBehavior = FillBehavior.HoldEnd          //动画完成时保持为终值
+            };
+            AnimationClock clock = scaleAnimation.CreateClock();
+            scale.ApplyAnimationClock(ScaleTransform.ScaleXProperty, clock, HandoffBehavior.Compose);
+            scale.ApplyAnimationClock(ScaleTransform.ScaleYProperty, clock, HandoffBehavior.Compose);
+        }
+
     }
 }

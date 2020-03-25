@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
+using YC.Recall.Common.Additional;
 using YC.Recall.Common.Unity;
 using YC.Recall.ILayer.Base;
 using YC.Recall.Model.Module;
@@ -71,15 +72,15 @@ namespace YC.Recall.ViewModel
 
         #region 工具栏
 
-        //private NoticeViewModel _NoticeView;
+        private NoticeViewModel _NoticeView;
 
-        ///// <summary>
-        ///// 通知模块
-        ///// </summary>
-        //public NoticeViewModel NoticeView
-        //{
-        //    get { return _NoticeView; }
-        //}
+        /// <summary>
+        /// 通知模块
+        /// </summary>
+        public NoticeViewModel NoticeView
+        {
+            get { return _NoticeView; }
+        }
 
         #endregion
 
@@ -87,6 +88,8 @@ namespace YC.Recall.ViewModel
 
         public MainViewModel()
         {
+            //初始化工具栏
+            _NoticeView = new NoticeViewModel();
             //加载窗体模块
             _ModuleManager = new ModuleManager();
             _ModuleManager.LoadModules();

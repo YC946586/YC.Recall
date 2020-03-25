@@ -27,17 +27,14 @@ namespace YC.Recall.Views.Recommend.Hit_Single
     {
         public Hit_SingleView()
         {
-            InitializeComponent();
-            
+            InitializeComponent();   
         }
-
-       
     }
     /// <summary>
-    /// AlbumView.xaml 的交互逻辑
+    /// Hit_SingleView.xaml 的交互逻辑
     /// </summary>
     /// 
-    [Module(ModuleType.Recommend, "Hit Single", "YC.Recall.Views.Recommend.Hit_Single.Hit_SingleViewDog", 0)]
+    [Module(ModuleType.Recommend, "Hit Single", "YC.Recall.Views.Recommend.Hit_Single.Hit_SingleViewDog", "\ue751", 0)]
     public class Hit_SingleViewDog : BaseView<Hit_SingleView, Hit_SingleViewModel, Hit_SingleModel>, IModel
     {
 

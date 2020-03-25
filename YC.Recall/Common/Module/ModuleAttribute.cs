@@ -49,12 +49,13 @@ namespace YC.Recall.Common.Module
         /// <param name="Namespace">模块位置</param> 
         /// <param name="IviewModel">对应ViewModel</param> 
         /// <param name="Sort">排序</param> 
-        public ModuleAttribute (ModuleType type, string name,string Namespace, int Sort )
+        public ModuleAttribute (ModuleType type, string name,string Namespace,string Icon, int Sort )
         {
             _Name = name;
             _ModuleType = type;
             _ModuleNameSpace = Namespace;
             _Sort = Sort;
+            _ICON = Icon;
         }
 
         #region private
