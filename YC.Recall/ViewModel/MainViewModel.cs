@@ -11,6 +11,7 @@ using YC.Recall.Common.Additional;
 using YC.Recall.Common.Unity;
 using YC.Recall.ILayer.Base;
 using YC.Recall.Model.Module;
+using YC.Recall.Views;
 using YC.Recall.Views.Album;
 
 namespace YC.Recall.ViewModel
@@ -95,9 +96,11 @@ namespace YC.Recall.ViewModel
             _ModuleManager.LoadModules();
             //设置系统默认首页
 
-            //AlbumView about = new AlbumView();
+            IndexView about = new IndexView();
+            IndexViewModel model = new IndexViewModel();
+            about.DataContext = model;
             //OpenPageCollection.Add(new PageInfo() { HeaderName = "系统首页", Body = about });
-            //CurrentPage = about;
+            CurrentPage = about;
 
         }
         /// <summary>
