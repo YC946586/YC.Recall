@@ -17,7 +17,41 @@
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Recommend" FontSize="20"  />
         </StackPanel>
-        <skin:ImgMovButton Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
-                           ImgPath="{Binding ImageSourcPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Width="200" Height="250" Grid.Row="1"/>
+        <ListBox ItemsSource="{Binding GridModelList}"  BorderThickness="0"  Grid.Row="1" Background="Transparent">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid  Columns="5"  VerticalAlignment="Top" HorizontalAlignment="Left">
+                    </UniformGrid>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Margin" Value="15 15 0 0"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <!-- 设置控件模板 -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem" >
+                                <skin:ImgMovButton Text="{Binding Name}"   ImgPath="{Binding ImgPath,Converter={StaticResource ImgFlag}}"  
+                                                   Remark="{Binding Remark,StringFormat=播放量：{0}}" Width="200" Height="250"/>
+                                <ControlTemplate.Triggers>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <!-- 设置触发器 -->
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#CCCCCC"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+          
+        </ListBox>
+
     </Grid>
 </UserControl>

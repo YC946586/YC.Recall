@@ -33,7 +33,7 @@
             </Setter>
             <Setter Property="Effect">
                 <Setter.Value>
-                    <BlurEffect Radius="6"></BlurEffect>
+                    <BlurEffect Radius="8"></BlurEffect>
                 </Setter.Value>
             </Setter>
         </Style>

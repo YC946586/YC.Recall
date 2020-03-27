@@ -21,7 +21,7 @@ namespace YC.Skin.Converters
                 defImage.EndInit();
                 return defImage;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

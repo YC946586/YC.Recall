@@ -7,20 +7,8 @@ using System.Threading.Tasks;
 
 namespace YC.Recall.Model
 {
-    public class Hit_SingleModel : ViewModelBase
+    public class Hit_SingleModel : AlbumModel
     {
-        string _ImagePath;
-        /// <summary>
-        /// 显示的图标路径
-        /// </summary>
-        public string ImagePath
-        {
-            get { return _ImagePath; }
-            set
-            {
-                _ImagePath = value;
-                RaisePropertyChanged();
-            }
-        }
+         
     }
 }

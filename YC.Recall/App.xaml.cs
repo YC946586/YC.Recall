@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using YC.Recall.Common.Unity;
+using YC.Recall.ILayer.Base;
 using YC.Recall.ViewModel;
 
 namespace YC.Recall
@@ -24,11 +25,16 @@ namespace YC.Recall
             base.OnStartup(e);
             //IOC接口注册
             BootStrapper.Initialize();
-            var Dialog = ServiceProvider.Instance.Get<MainWindow>();
-            var main = ServiceProvider.Instance.Get<MainViewModel>();
-            Dialog.DataContext = main;
-            Dialog?.ShowDialog();
-         
+            //var Dialog = ServiceProvider.Instance.Get<MainWindow>();
+            //var main = ServiceProvider.Instance.Get<MainViewModel>();
+            //Dialog.DataContext = main;
+            //Dialog?.ShowDialog();
+            MainViewModel view = new MainViewModel();
+            var Dialog = ServiceProvider.Instance.Get<IModelDialog>("MainViewDlg");
+            Dialog.BindViewModel(view);
+            Dialog.ShowDialog();
+
+            
         }
     }
 }

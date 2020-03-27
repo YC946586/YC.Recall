@@ -25,21 +25,25 @@ namespace YC.Skin
         private void ImgMovButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             var cur = sender as ImgMovButton;
-            ScaleEasingOutAnimation(cur);
+            Border InTemplate = (Border)cur.Template.FindName("BorPresenter", cur);
+            ScaleEasingOutAnimation(InTemplate);
         }
 
         private void ImgMovButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
           
             var cur = sender as ImgMovButton;
-            ScaleEasingInAnimation(cur);
+            Border InTemplate = (Border)cur.Template.FindName("BorPresenter", cur);
+            ScaleEasingInAnimation(InTemplate);
         }
 
-        // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(ImgMovButton), new PropertyMetadata(""));
         //定义Imagesource依赖属性
 
+
+        public static readonly DependencyProperty RemarkProperty =
+    DependencyProperty.Register("Remark", typeof(string), typeof(ImgMovButton), new PropertyMetadata(""));
         public static readonly DependencyProperty ImgPathProperty
         = DependencyProperty.Register("ImgPath", typeof(ImageSource), typeof(ImgMovButton), null);
 
@@ -55,6 +59,13 @@ namespace YC.Skin
             set { SetValue(ImgPathProperty, value); }
         }
 
+        public string Remark
+        {
+            get { return (string)GetValue(RemarkProperty); }
+            set { SetValue(RemarkProperty, value); }
+        }
+
+        
 
         /// <summary>
         /// 弹簧式放大
@@ -64,7 +75,7 @@ namespace YC.Skin
         {
             ScaleTransform scale = new ScaleTransform();
             element.RenderTransform = scale;
-            element.RenderTransformOrigin = new Point(0.5, 0.5);//定义圆心位置
+            element.RenderTransformOrigin = new Point(0.7, 0.7);//定义圆心位置
             EasingFunctionBase easing = new ElasticEase()
             {
                 EasingMode = EasingMode.EaseOut,            //公式
@@ -114,7 +125,7 @@ namespace YC.Skin
 
             ScaleTransform scale = new ScaleTransform();
             element.RenderTransform = scale;
-            element.RenderTransformOrigin = new Point(0.5, 0.5);//定义圆心位置
+            element.RenderTransformOrigin = new Point(0.7, 0.7);//定义圆心位置
             EasingFunctionBase easing = new ElasticEase()
             {
                 EasingMode = EasingMode.EaseOut,            //公式

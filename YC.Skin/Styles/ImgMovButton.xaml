@@ -15,12 +15,13 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type skin:ImgMovButton}">
-                    <Grid   Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" x:Name="mainGrid" Tag="{TemplateBinding ImgPath,Converter={StaticResource ImgFlag}}">
+                    <Grid   Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" x:Name="mainGrid" Tag="{TemplateBinding ImgPath}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="50"/>
+                            <RowDefinition Height="20"/>
                         </Grid.RowDefinitions>
-                        <Border CornerRadius="10"  x:Name="bor">
+                        <Border CornerRadius="10"  x:Name="BorPresenter" Margin="10">
                             <Border.Background>
                                 <ImageBrush ImageSource="{Binding ElementName=mainGrid,Path=Tag}" ></ImageBrush>
                             </Border.Background>
@@ -29,13 +30,17 @@
                             </Border.Effect>
                         
                         </Border>
-                        <TextBlock x:Name="txtMs" Text="{TemplateBinding Text}" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Center"
-                                   FontSize="15" Grid.Row="1"/>
+                        <TextBlock x:Name="txtMs" Text="{TemplateBinding Text}" TextWrapping="Wrap" Foreground="{DynamicResource YcSkinColor}" HorizontalAlignment="Center"  VerticalAlignment="Center"
+                                   FontSize="15"  Grid.Row="1" Margin="10 0" />
+
+                        <TextBlock  Text="{TemplateBinding Remark}" Foreground="Wheat" HorizontalAlignment="Left"  VerticalAlignment="Center"
+                                   FontSize="14" Grid.Row="2" Margin="10 0" />
+
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <!--<Setter  Property="Padding" Value="50"></Setter>
-                            <Setter TargetName="bor"  Property="Width" Value="{Binding ElementName=bor,Path=ActualWidth,Converter={StaticResource IWidthFlag}}"></Setter>-->
+                            <Setter  TargetName="txtMs" Property="Foreground" Value="{DynamicResource YcSkinColor}"></Setter>
+                         
                             <!--<Setter TargetName="txtMs"  Property="Foreground" Value="Red"></Setter>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
