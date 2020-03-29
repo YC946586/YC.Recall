@@ -25,8 +25,8 @@
                 <StackPanel   Margin="0 20 0 0" >
                     <Border BorderThickness="0 0 0 1">
                         <StackPanel Orientation="Horizontal"  Height="40">
-                            <Path  Data="{StaticResource AllDot}"  Fill="#365255"  Margin="25 0 10 0"/>
-                            <TextBlock Text="{Binding GroupName}"   VerticalAlignment="Center"/>
+                            <Path  Data="{StaticResource AllDot}"  Fill="{DynamicResource YcSkinSubColor}"  Margin="25 0 10 0"/>
+                            <TextBlock Text="{Binding GroupName}" FontSize="14"  Foreground="{DynamicResource YcSkinFontColor}"  VerticalAlignment="Center"/>
                         </StackPanel>
                     </Border>
                     <ItemsControl ItemsSource="{Binding Modules}">

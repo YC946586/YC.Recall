@@ -17,15 +17,29 @@
         
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="MainxianColor" Color="#cccccc"/>
+    <!--主题色-->
+    <SolidColorBrush x:Key="YcSkinColor" Color="#2d8cf0"/>
+    <!--移入悬停背景颜色-->
+    <SolidColorBrush x:Key="YcSkinHoverColor" Color="#F0FAFF"/>
+    <!--标题 Title-->
+    <SolidColorBrush x:Key="YcSkinFontColor" Color="#17233d"/>
+    <!--正文 Content-->
+    <SolidColorBrush x:Key="YcSkinFontContentColor" Color="#515a6e"/>
+    <!--辅助/图标 Sub Color-->
+    <SolidColorBrush x:Key="YcSkinSubColor" Color="#808695"/>
+ 
 
-    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="YcSkinColor">
+
+  
+
+    
+    <!--<LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="YcSkinColor">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0" Color="#1ED0A0"/>
             <GradientStop Offset="0.6" Color="#2C9B7C"/>
             <GradientStop Offset="1" Color="#40897E"/>
         </LinearGradientBrush.GradientStops>
-    </LinearGradientBrush>
+    </LinearGradientBrush>-->
     <FontFamily x:Key="IconFont">pack://application:,,,/YC.Skin;component/Resources/#iconfont</FontFamily>
     <!-- 应该在此定义资源字典条目。-->
     <GeometryGroup x:Key="IndexMusic">

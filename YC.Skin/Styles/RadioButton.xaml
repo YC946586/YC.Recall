@@ -8,11 +8,12 @@
     <PathGeometry x:Key="rdbSelect">M431.47 793.782c-11.365 0-22.332-4.378-30.589-12.286l-235.495-225.535c-17.64-16.894-18.245-44.891-1.35-62.528 16.894-17.64 44.891-18.245 62.532-1.351l201.055 192.552 364.692-443.171c15.519-18.86 43.39-21.567 62.253-6.049 18.861 15.519 21.568 43.39 6.048 62.251l-394.992 479.993c-7.821 9.504-19.248 15.319-31.534 16.047-0.874 0.052-1.748 0.078-2.621 0.078z</PathGeometry>
 
     <Style TargetType="{x:Type ex:RadioButtonIcon}">
-        <Setter Property="Height" Value="30"/>
+        <Setter Property="Height" Value="35"/>
         <Setter Property="IconColor" Value="#668081"/>
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Margin" Value="0 15 0 0"/>
-        <Setter Property="Foreground" Value="#3F3B38"/>
+        <Setter Property="Foreground" Value="{DynamicResource YcSkinFontColor}"/>
         <Setter Property="SelectIcon" Value="{StaticResource rdbSelect}"/>
         <Setter Property="BorderThickness" Value="2 0 0 0"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -29,7 +30,7 @@
                                         BorderThickness="{TemplateBinding BorderThickness}">
                             </Border>-->
                             <!--<Path  Data="{TemplateBinding SelectIcon}" Width="15" Height="15" Fill="{TemplateBinding Foreground}" Stretch="Fill"></Path>-->
-                            <TextBlock Text="{TemplateBinding TextIcon}" FontFamily="{StaticResource IconFont}" FontSize="14" Foreground="{TemplateBinding Foreground}"></TextBlock>
+                            <TextBlock x:Name="txticon" Text="{TemplateBinding TextIcon}" FontFamily="{StaticResource IconFont}" FontSize="14" Foreground="{DynamicResource YcSkinSubColor}"></TextBlock>
                             <TextBlock x:Name="Block" Text="{TemplateBinding Text}" VerticalAlignment="Center" Margin="10,0,0,0"
                                         Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}"/>
                         </StackPanel>
@@ -38,16 +39,17 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="true">
                             <Setter Property="BorderThickness" TargetName="select" Value="4,0,0,0"/>
-                            <Setter Property="Background" Value="{DynamicResource YcSkinColor}" TargetName="select"/>
-                            <Setter Property="BorderBrush" Value="#128E6A" TargetName="select"/>
-                            <Setter Property="Foreground" Value="#E9E9EB" />
+                            <Setter Property="Background" Value="{DynamicResource YcSkinHoverColor}" TargetName="select"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource YcSkinColor}" TargetName="select"/>
+                            <Setter Property="Foreground" Value="{DynamicResource YcSkinColor}" />
                             
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderThickness" TargetName="select" Value="4,0,0,0"/>
-                            <Setter Property="Background"  Value="{DynamicResource YcSkinColor}" TargetName="select"/>
-                            <Setter Property="BorderBrush" Value="#128E6A" TargetName="select"/>
-                            <Setter Property="Foreground" Value="#E9E9EB" />
+                            <!--<Setter Property="BorderThickness" TargetName="select" Value="4,0,0,0"/>
+                            <Setter Property="Background"  Value="{DynamicResource YcSkinMovFontColor}" TargetName="select"/>-->
+                            <!--<Setter Property="BorderBrush" Value="{DynamicResource YcSkinColor}" TargetName="select"/>-->
+                            <Setter Property="Foreground" TargetName="txticon"  Value="{DynamicResource YcSkinColor}" />
+                            <Setter Property="Foreground" Value="{DynamicResource YcSkinColor}" />
                         </Trigger>
                         <!--<Trigger Property="IsChecked" Value="False">
                             <Setter Property="Background" Value="Transparent" TargetName="select"/>

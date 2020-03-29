@@ -12,7 +12,7 @@
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>
-    <Window.Template>
+    <!--<Window.Template>
         <ControlTemplate TargetType="Window">
             <Border Background="Transparent">
                 <Border CornerRadius="16" Background="White">
@@ -23,7 +23,7 @@
                 </Border>
             </Border>
         </ControlTemplate>
-    </Window.Template>
+    </Window.Template>-->
     <Window.Resources>
         <Style x:Key="Gridstyles" TargetType="Grid">
             <Setter Property="Background">
@@ -39,7 +39,7 @@
         </Style>
     </Window.Resources>
     <Grid >
-        <Grid Style="{StaticResource Gridstyles}"   />
+        <!--<Grid Style="{StaticResource Gridstyles}"   />-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -60,10 +60,10 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"  >
-                    <Path Data="{StaticResource IndexMusic}" Fill="#365255" Width="30" Height="30"></Path>
+                    <Path Data="{StaticResource IndexMusic}" Fill="{DynamicResource YcSkinFontColor}" Width="30" Height="30"></Path>
                     <StackPanel Orientation="Vertical"  Margin="15 0 20 0">
-                        <TextBlock Text="RECALL MUSIC" Foreground="#87A0A4"  FontWeight="Black" FontSize="16"></TextBlock>
-                        <TextBlock Text="AO LI GIE" Foreground="#87A0A4"  FontWeight="Black"></TextBlock>
+                        <TextBlock Text="RECALL MUSIC" Foreground="{DynamicResource YcSkinFontColor}" FontWeight="Black" FontSize="16"></TextBlock>
+                        <TextBlock Text="AO LI GIE" Foreground="{DynamicResource YcSkinFontColor}"  FontWeight="Black" FontSize="14"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <userControls:MainLeftMenu Grid.Row="1"/>
