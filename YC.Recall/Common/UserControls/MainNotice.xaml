@@ -30,7 +30,7 @@
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth1"/>
             <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -93,7 +93,7 @@
                     <Button Name="Node" Style="{DynamicResource ButtonStyle}" Command="{ Binding ApplyCommand}">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="{Binding IconName}"
-                                                     Width="18" Height="18" HorizontalAlignment="Center" 
+                                                     Width="18" Height="15" HorizontalAlignment="Center" 
                                                      Foreground="{Binding ElementName=Node,Path=Foreground}"
                                                      VerticalAlignment="Center"/>
                             <!--<TextBlock  Text="{Binding Count,Converter={StaticResource vis}}" FontSize="13"  

@@ -5,7 +5,9 @@
                     	xmlns:skin="clr-namespace:YC.Skin"
                     xmlns:Conv="clr-namespace:YC.Skin.Converters">
     <Conv:ImageConverter x:Key="ImgFlag"/>
+   
 
+    
     <Style TargetType="{x:Type skin:ImgMovButton}">
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -21,7 +23,7 @@
                             <RowDefinition Height="50"/>
                             <RowDefinition Height="20"/>
                         </Grid.RowDefinitions>
-                        <Border CornerRadius="10"  x:Name="BorPresenter" Margin="10">
+                        <Border CornerRadius="10"  x:Name="PART_Content" Margin="10">
                             <Border.Background>
                                 <ImageBrush ImageSource="{Binding ElementName=mainGrid,Path=Tag}" ></ImageBrush>
                             </Border.Background>
@@ -30,11 +32,11 @@
                             </Border.Effect>
                         
                         </Border>
-                        <TextBlock x:Name="txtMs" Text="{TemplateBinding Text}" TextWrapping="Wrap" Foreground="{DynamicResource YcSkinFontColor}" HorizontalAlignment="Center"  VerticalAlignment="Center"
-                                   FontSize="15"  Grid.Row="1" Margin="10 0" />
+                        <TextBlock x:Name="txtMs" Text="{TemplateBinding Text}" TextWrapping="Wrap" Foreground="{DynamicResource YcSkinFontColor}" HorizontalAlignment="Left"  VerticalAlignment="Center"
+                                   FontSize="14"  Grid.Row="1" Margin="10 0" />
 
                         <TextBlock  Text="{TemplateBinding Remark}" Foreground="{DynamicResource YcSkinFontContentColor}" HorizontalAlignment="Left"  VerticalAlignment="Center"
-                                   FontSize="14" Grid.Row="2" Margin="10 0" />
+                                   FontSize="13" Grid.Row="2" Margin="10 0" />
 
                     </Grid>
                     <ControlTemplate.Triggers>

@@ -31,7 +31,7 @@
                             </Border>-->
                             <!--<Path  Data="{TemplateBinding SelectIcon}" Width="15" Height="15" Fill="{TemplateBinding Foreground}" Stretch="Fill"></Path>-->
                             <TextBlock x:Name="txticon" Text="{TemplateBinding TextIcon}" FontFamily="{StaticResource IconFont}" FontSize="14" Foreground="{DynamicResource YcSkinSubColor}"></TextBlock>
-                            <TextBlock x:Name="Block" Text="{TemplateBinding Text}" VerticalAlignment="Center" Margin="10,0,0,0"
+                            <TextBlock x:Name="Block" Text="{TemplateBinding Text}" VerticalAlignment="Center" Margin="10,0,0,0"  
                                         Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}"/>
                         </StackPanel>
                     </Border>

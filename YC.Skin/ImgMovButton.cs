@@ -25,7 +25,7 @@ namespace YC.Skin
         private void ImgMovButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             var cur = sender as ImgMovButton;
-            Border InTemplate = (Border)cur.Template.FindName("BorPresenter", cur);
+            Border InTemplate = (Border)cur.Template.FindName("PART_Content", cur);
             ScaleEasingOutAnimation(InTemplate);
         }
 
@@ -33,7 +33,7 @@ namespace YC.Skin
         {
           
             var cur = sender as ImgMovButton;
-            Border InTemplate = (Border)cur.Template.FindName("BorPresenter", cur);
+            Border InTemplate = (Border)cur.Template.FindName("PART_Content", cur);
             ScaleEasingInAnimation(InTemplate);
         }
 

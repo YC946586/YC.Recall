@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:System="clr-namespace:System;assembly=mscorlib"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-     >
+    xmlns:Conv="clr-namespace:YC.Skin.Converters">
  
         <ResourceDictionary.MergedDictionaries>
         <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
@@ -27,12 +27,12 @@
     <SolidColorBrush x:Key="YcSkinFontContentColor" Color="#515a6e"/>
     <!--辅助/图标 Sub Color-->
     <SolidColorBrush x:Key="YcSkinSubColor" Color="#808695"/>
- 
 
 
-  
+    <Conv:ColorConerter x:Key="ColorFlag"/>
 
-    
+
+
     <!--<LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="YcSkinColor">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0" Color="#1ED0A0"/>

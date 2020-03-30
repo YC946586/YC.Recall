@@ -11,47 +11,178 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="330"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Recommend" FontSize="20"  />
+            <TextBlock Text="Recommend" FontSize="16"   FontFamily="Helvetica Neue"  FontWeight="Bold" Foreground="#464c5b"/>
+            <ListBox ItemsSource="{Binding GridModelList}"  BorderThickness="0"  Grid.Row="1" Background="Transparent" VerticalAlignment="Top">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid  Columns="5"  VerticalAlignment="Top" HorizontalAlignment="Left">
+                        </UniformGrid>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Margin" Value="0 15 0 0"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <!-- 设置控件模板 -->
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem" >
+                                    <skin:ImgMovButton Text="{Binding Name}"   ImgPath="{Binding ImgPath,Converter={StaticResource ImgFlag}}"  
+                                                   Remark="{Binding Remark,StringFormat=播放量：{0}}" Width="210" Height="260"/>
+                                    <ControlTemplate.Triggers>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <!-- 设置触发器 -->
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#CCCCCC"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+            </ListBox>
+
         </StackPanel>
-        <ListBox ItemsSource="{Binding GridModelList}"  BorderThickness="0"  Grid.Row="1" Background="Transparent">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid  Columns="5"  VerticalAlignment="Top" HorizontalAlignment="Left">
-                    </UniformGrid>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-                    <Setter Property="Margin" Value="15 15 0 0"/>
-                    <Setter Property="Background" Value="Transparent"/>
-                    <!-- 设置控件模板 -->
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ListBoxItem" >
-                                <skin:ImgMovButton Text="{Binding Name}"   ImgPath="{Binding ImgPath,Converter={StaticResource ImgFlag}}"  
-                                                   Remark="{Binding Remark,StringFormat=播放量：{0}}" Width="200" Height="250"/>
-                                <ControlTemplate.Triggers>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <!-- 设置触发器 -->
 
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="#CCCCCC"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListBox.ItemContainerStyle>
-          
-        </ListBox>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
 
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="New Song" FontSize="16" FontWeight="Black" />
+                <ListBox ItemsSource="{Binding GridSongList}"  BorderThickness="0"  Grid.Row="1" Background="Transparent" VerticalAlignment="Top">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel  Orientation="Vertical">
+                            </StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Margin" Value="10 15 0 0"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <!-- 设置控件模板 -->
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem" >
+                                        <Border x:Name="bor" Height="40" CornerRadius="10" BorderBrush="Transparent" Background="White">
+                                            <StackPanel   Orientation="Horizontal" VerticalAlignment="Center"  >
+                                                <Border CornerRadius="5"  Width="50"  >
+                                                    <Border.Background>
+                                                        <ImageBrush ImageSource="{Binding ImgPath,Converter={StaticResource ImgFlag}}"    Stretch="Uniform"/>
+                                                    </Border.Background>
+                                                </Border>
+                                                <TextBlock Text="{Binding SongName}" Foreground="{DynamicResource YcSkinFontColor}" Width="160" FontSize="14"/>
+                                                <TextBlock Text="{Binding Composer}"  Foreground="{DynamicResource YcSkinFontColor}"  Width="150" FontSize="14"/>
+                                                <TextBlock Text="{Binding AlbumName}"  Foreground="{DynamicResource YcSkinFontColor}"  Width="200" FontSize="14"/>
+                                                <TextBlock Text="{Binding Duration}"  Foreground="{DynamicResource YcSkinFontColor}"  Margin="30 0" FontSize="14"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Background" TargetName="bor" Value="#F0F1FA"/>
+                                                <!--<Setter Property="Effect" TargetName="bor">  
+                                                    <Setter.Value >
+                                                        <DropShadowEffect Color="#999999" BlurRadius="10" ShadowDepth="10" Opacity="0.4" Direction="270"></DropShadowEffect>
+                                                    </Setter.Value>
+                                                </Setter>-->
+
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                </ListBox>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Play Lists" FontSize="16" FontWeight="Black" />
+                <ListBox ItemsSource="{Binding GridPlayList}"  BorderThickness="0"  Grid.Row="1" Background="Transparent" >
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid   Columns="2"   Rows="2">
+                            </UniformGrid>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Margin" Value="10"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <!-- 设置控件模板 -->
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem" >
+                                        <Border x:Name="bor"  CornerRadius="10" BorderBrush="Transparent" Background="White" >
+                                            <Border.Effect>
+                                                <!--<DropShadowEffect Color="#F0F1FA" BlurRadius="10" ShadowDepth="10" Opacity="0.4" Direction="270"></DropShadowEffect>-->
+                                                <DropShadowEffect ShadowDepth="-4" BlurRadius="5" Color="#F0F1FA"/>
+                                            </Border.Effect>
+                                            <Grid Margin="18" >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="40"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Fill="{Binding AlbumName,Converter={StaticResource ColorFlag }}"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                                                    <Path.Data>
+                                                        <GeometryGroup>
+                                                            <EllipseGeometry RadiusX="90" RadiusY="90" Center="150,180"/>
+                                                            <EllipseGeometry RadiusX="70" RadiusY="70" Center="150,180"/>
+                                                        </GeometryGroup>
+                                                    </Path.Data>
+                                                </Path>
+                                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Row="1">
+                                                    <TextBlock Text="{Binding SongName}" FontSize="14"/>
+                                                    <TextBlock Text="{Binding Composer}" FontSize="13"/>
+                                                </StackPanel>
+                                                <TextBlock FontFamily="{StaticResource IconFont}" Text="&#xe686;" Foreground="{Binding AlbumName,Converter={StaticResource ColorFlag }}"    Grid.Column="5"  Grid.RowSpan="5" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                                            </Grid>
+                                           
+                                            
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+
+                                                <!--<Setter Property="Effect" TargetName="bor">  
+                                                    <Setter.Value >
+                                                        <DropShadowEffect Color="#999999" BlurRadius="10" ShadowDepth="10" Opacity="0.4" Direction="270"></DropShadowEffect>
+                                                    </Setter.Value>
+                                                </Setter>-->
+
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                </ListBox>
+            </Grid>
+           
+        </Grid>
     </Grid>
 </UserControl>

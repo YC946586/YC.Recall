@@ -46,6 +46,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\ColorConerter.cs" />
     <Compile Include="Converters\ImageConverter.cs" />
     <Compile Include="Converters\NameToObjectConverter.cs" />
     <Compile Include="ImgMovButton.cs" />
