@@ -27,7 +27,7 @@
                     <Style TargetType="ListBoxItem">
                         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
                         <Setter Property="Cursor" Value="Hand"/>
-                        <Setter Property="Margin" Value="0 15 0 0"/>
+                        <Setter Property="Margin" Value="10 15 0 0"/>
                         <Setter Property="Background" Value="Transparent"/>
                         <!-- 设置控件模板 -->
                         <Setter Property="Template">

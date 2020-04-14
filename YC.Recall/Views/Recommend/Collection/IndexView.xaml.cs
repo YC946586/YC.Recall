@@ -12,8 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YC.Recall.Common.Module;
+using YC.Recall.ILayer.Base;
+using YC.Recall.Model;
+using YC.Recall.ViewDialog.Base;
+using YC.Recall.ViewModel;
 
-namespace YC.Recall.Views
+namespace YC.Recall.Views.Collection
 {
     /// <summary>
     /// IndexView.xaml 的交互逻辑
@@ -24,5 +29,14 @@ namespace YC.Recall.Views
         {
             InitializeComponent();
         }
+    }
+    /// <summary>
+    /// IndexViewDog
+    /// </summary>
+    /// 
+    [Module(ModuleType.Recommend, "Collection", "YC.Recall.Views.Collection.IndexViewDog", "\ue72d", 1)]
+    public class IndexViewDog : BaseView<IndexView, IndexViewModel, IndexModel>, IModel
+    {
+
     }
 }

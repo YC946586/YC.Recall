@@ -13,6 +13,7 @@ using YC.Recall.ILayer.Base;
 using YC.Recall.Model.Module;
 using YC.Recall.Views;
 using YC.Recall.Views.Album;
+using YC.Recall.Views.Collection;
 
 namespace YC.Recall.ViewModel
 {
@@ -116,6 +117,7 @@ namespace YC.Recall.ViewModel
                     App.Current.Dispatcher.Invoke(() =>
                     {
                         var ass = System.Reflection.Assembly.GetExecutingAssembly();
+                        var DD = ass.CreateInstance(module.ModNameSpcae);
                         if (ass.CreateInstance(module.ModNameSpcae) is IModel dialog)
                         {
                             dialog.BindDefaultModel(module.Authorities);

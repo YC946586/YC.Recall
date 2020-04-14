@@ -10,42 +10,18 @@ using System.Windows.Media.Animation;
 
 namespace YC.Skin
 {
-    public class ImgMovButton : Control
+    public class ButtonPath : Button
     {
-        public ImgMovButton()
-        {
-            MouseEnter += ImgMovButton_MouseEnter;
-            MouseLeave += ImgMovButton_MouseLeave;
-        }
-        /// <summary>
-        /// 移除
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ImgMovButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            var cur = sender as ImgMovButton;
-            Border InTemplate = (Border)cur.Template.FindName("PART_Content", cur);
-            ScaleEasingOutAnimation(InTemplate);
-        }
-
-        private void ImgMovButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-          
-            var cur = sender as ImgMovButton;
-            Border InTemplate = (Border)cur.Template.FindName("PART_Content", cur);
-            ScaleEasingInAnimation(InTemplate);
-        }
-
+     
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(string), typeof(ImgMovButton), new PropertyMetadata(""));
+            DependencyProperty.Register("Text", typeof(string), typeof(ButtonPath), new PropertyMetadata(""));
         //定义Imagesource依赖属性
 
 
         public static readonly DependencyProperty RemarkProperty =
-    DependencyProperty.Register("Remark", typeof(string), typeof(ImgMovButton), new PropertyMetadata(""));
+    DependencyProperty.Register("Remark", typeof(string), typeof(ButtonPath), new PropertyMetadata(""));
         public static readonly DependencyProperty ImgPathProperty
-        = DependencyProperty.Register("ImgPath", typeof(ImageSource), typeof(ImgMovButton), null);
+        = DependencyProperty.Register("ImgPath", typeof(ImageSource), typeof(ButtonPath), null);
 
         public string Text
         {
@@ -65,8 +41,6 @@ namespace YC.Skin
             set { SetValue(RemarkProperty, value); }
         }
 
-        
-
         /// <summary>
         /// 弹簧式放大
         /// </summary>
@@ -75,7 +49,7 @@ namespace YC.Skin
         {
             ScaleTransform scale = new ScaleTransform();
             element.RenderTransform = scale;
-            element.RenderTransformOrigin = new Point(0.5, 0.5);//定义圆心位置
+            element.RenderTransformOrigin = new Point(0.7, 0.7);//定义圆心位置
             EasingFunctionBase easing = new ElasticEase()
             {
                 EasingMode = EasingMode.EaseOut,            //公式
@@ -85,7 +59,7 @@ namespace YC.Skin
             DoubleAnimation scaleAnimation = new DoubleAnimation()
             {
                 From = 1,                                 //起始值
-                To =1.2,                                     //结束值
+                To = 1.2,                                     //结束值
                 EasingFunction = easing,                    //缓动函数
                 Duration = new TimeSpan(0, 0, 0, 1, 100),    //动画播放时间
                 FillBehavior = FillBehavior.HoldEnd          //动画完成时保持为终值
@@ -125,7 +99,7 @@ namespace YC.Skin
 
             ScaleTransform scale = new ScaleTransform();
             element.RenderTransform = scale;
-            element.RenderTransformOrigin = new Point(0.5, 0.5);//定义圆心位置
+            element.RenderTransformOrigin = new Point(0.7, 0.7);//定义圆心位置
             EasingFunctionBase easing = new ElasticEase()
             {
                 EasingMode = EasingMode.EaseOut,            //公式

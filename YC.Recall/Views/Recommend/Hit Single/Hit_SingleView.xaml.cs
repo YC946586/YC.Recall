@@ -37,6 +37,6 @@ namespace YC.Recall.Views.Recommend.Hit_Single
     [Module(ModuleType.Recommend, "Hit Single", "YC.Recall.Views.Recommend.Hit_Single.Hit_SingleViewDog", "\ue751", 0)]
     public class Hit_SingleViewDog : BaseView<Hit_SingleView, Hit_SingleViewModel, Hit_SingleModel>, IModel
     {
-
+         
     }
 }
