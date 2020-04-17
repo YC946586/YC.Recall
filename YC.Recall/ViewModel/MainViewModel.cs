@@ -11,9 +11,11 @@ using YC.Recall.Common.Additional;
 using YC.Recall.Common.Unity;
 using YC.Recall.ILayer.Base;
 using YC.Recall.Model.Module;
+using YC.Recall.ViewModel.Recommend.Hit_Single;
 using YC.Recall.Views;
 using YC.Recall.Views.Album;
 using YC.Recall.Views.Collection;
+using YC.Recall.Views.Recommend.Hit_Single;
 
 namespace YC.Recall.ViewModel
 {
@@ -97,8 +99,9 @@ namespace YC.Recall.ViewModel
             _ModuleManager.LoadModules();
             //设置系统默认首页
 
-            IndexView about = new IndexView();
-            IndexViewModel model = new IndexViewModel();
+            Hit_SingleView about = new Hit_SingleView();
+            Hit_SingleViewModel model = new Hit_SingleViewModel();
+            model.InitViewModel();
             about.DataContext = model;
             //OpenPageCollection.Add(new PageInfo() { HeaderName = "系统首页", Body = about });
             CurrentPage = about;

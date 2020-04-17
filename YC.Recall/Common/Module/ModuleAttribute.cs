@@ -14,7 +14,7 @@ namespace YC.Recall.Common.Module
         [Desc("Recommend")]
         Recommend = 0,
 
-        [Desc("My Music")]
+        [Desc("My Song List")]
         My_Music = 1,
 
         [Desc("More")]

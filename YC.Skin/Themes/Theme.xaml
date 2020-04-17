@@ -14,6 +14,7 @@
         <ResourceDictionary Source="../Styles/RadioButton.xaml"/>
         <ResourceDictionary Source="../Styles/SearchText.xaml"/>
         <ResourceDictionary Source="../Styles/ImgMovButton.xaml"/>
+        <ResourceDictionary Source="../Styles/DategridStyles.xaml"/>
         
     </ResourceDictionary.MergedDictionaries>
 
@@ -148,7 +149,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
-    <Style TargetType="DataGridColumnHeader" >
+    <!--<Style TargetType="DataGridColumnHeader" >
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -162,15 +163,20 @@
         <Setter Property="Foreground" Value="#959595"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
-    </Style>
+    </Style>-->
 
-    <Style TargetType="DataGrid">
+    <!--<Style TargetType="DataGrid">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="HeadersVisibility" Value="Column"/>
         <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
         <Setter Property="CanUserAddRows" Value="False"/>
         <Setter Property="VerticalGridLinesBrush" Value="Transparent"/>
         <Setter Property="HorizontalGridLinesBrush" Value="WhiteSmoke"/>
         <Setter Property="BorderThickness" Value="0"/>
-    </Style>
+    </Style>-->
+    
+    
+    
+    
 </ResourceDictionary>

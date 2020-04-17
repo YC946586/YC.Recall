@@ -37,7 +37,7 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <skin:RadioButtonIcon TextIcon="{Binding ICON}" Text="{Binding Name}"  Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                <skin:RadioButtonIcon TextIcon="{Binding ICON}"   IsChecked="{Binding IsCheck,Mode=OneWay}"  Text="{Binding Name}"  Command="{Binding RelativeSource={RelativeSource FindAncestor, 
                                             AncestorType={x:Type local:MainLeftMenu }},
                                             Path=DataContext.ExcuteCommand,Mode=TwoWay}"   CommandParameter="{Binding}"/>
                             </DataTemplate>

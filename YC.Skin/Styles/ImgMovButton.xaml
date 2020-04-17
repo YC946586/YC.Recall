@@ -13,7 +13,7 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="Silver"/>
         <Setter Property="Background" Value="Silver"/>
-     
+      
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type skin:ImgMovButton}">

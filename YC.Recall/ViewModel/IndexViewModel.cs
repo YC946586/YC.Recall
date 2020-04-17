@@ -14,7 +14,7 @@ namespace YC.Recall.ViewModel
         public ObservableCollection<ModuleInfo> Modules { get; set; }
   
 
-       
+        
         public override void InitViewModel()
         {
             base.InitViewModel();

@@ -138,6 +138,7 @@ namespace YC.Recall.Model.Module
         {
             try
             {
+                bool IsCheck = false;
                 ModuleComponent loader = new ModuleComponent();
                 _IModule = await Task.Run(() => loader.GetModules());
                 if (_IModule == null) return;
@@ -149,10 +150,22 @@ namespace YC.Recall.Model.Module
                     if (mg != null)
                     {
                         if (mg.Modules == null) mg.Modules = new ObservableCollection<Element>();
-                       
-                        Element md = new Element(m.Name, m.ModuleNameSpace,  m.ICON);
-                        mg.Modules.Add(md);
-                        Modules.Add(md);
+                        if (!IsCheck)
+                        {
+                            IsCheck = true;
+                            Element md = new Element(m.Name, m.ModuleNameSpace, m.ICON, true);
+
+                            mg.Modules.Add(md);
+                            Modules.Add(md);
+                        }
+                        else
+                        {
+                            Element md = new Element(m.Name, m.ModuleNameSpace, m.ICON );
+
+                            mg.Modules.Add(md);
+                            Modules.Add(md);
+                        }
+                      
                     }
                 }
                 GC.Collect();

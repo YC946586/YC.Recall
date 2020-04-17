@@ -71,11 +71,12 @@ namespace YC.Recall.Model.Module
     /// </summary>
     public class Element
     {
-        public Element(string Name, string NameSpace, string Icon)
+        public Element(string Name, string NameSpace, string Icon,bool chcek=false)
         {
             _Name = Name;
             _ModNameSpcae = NameSpace;
             _Icon = Icon;
+            _Ischcek = chcek;
         }
 
         private string _Name;
@@ -83,7 +84,7 @@ namespace YC.Recall.Model.Module
         private int? _Authorities;
         private string _ModNameSpcae;
         private string _Icon;
-
+        private bool _Ischcek;
 
         /// <summary>
         /// 图标-IconFont
@@ -124,6 +125,12 @@ namespace YC.Recall.Model.Module
         {
             get { return _Authorities; }
         }
-
+        /// <summary>
+        /// ICON
+        /// </summary>
+        public bool IsCheck
+        {
+            get { return _Ischcek; }
+        }
     }
 }

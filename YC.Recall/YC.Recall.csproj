@@ -124,12 +124,14 @@
     <Compile Include="Model\Module\ModuleGroup.cs" />
     <Compile Include="Model\Module\ModuleManager.cs" />
     <Compile Include="Model\Module\PageInfo.cs" />
+    <Compile Include="Model\SongsModell.cs" />
     <Compile Include="ViewDialog\Base\BaseView.cs" />
     <Compile Include="ViewDialog\Base\BaseViewDialog.cs" />
     <Compile Include="ViewModel\IndexViewModel.cs" />
     <Compile Include="ViewModel\Recommend\Album\AlbumViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\Recommend\Hit Single\Hit_SingleViewModel.cs" />
+    <Compile Include="ViewModel\Recommend\Songs\SongsViewModel.cs" />
     <Compile Include="Views\Recommend\Collection\IndexView.xaml.cs">
       <DependentUpon>IndexView.xaml</DependentUpon>
     </Compile>
@@ -138,6 +140,9 @@
     </Compile>
     <Compile Include="Views\Recommend\Hit Single\Hit_SingleView.xaml.cs">
       <DependentUpon>Hit_SingleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recommend\Songs\SongsView.xaml.cs">
+      <DependentUpon>SongsView.xaml</DependentUpon>
     </Compile>
     <Page Include="Common\UserControls\MainLeftMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Recommend\Hit Single\Hit_SingleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Recommend\Songs\SongsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
